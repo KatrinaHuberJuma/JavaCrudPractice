@@ -37,7 +37,7 @@ public class BooksApi {
         Book book = bookService.updateBook(id, numOfPages, title, lang, desc);
         return book;
     }
-	@RequestMapping("/api/books/{id}/delete")
+	@RequestMapping(value="/api/books/{id}", method=RequestMethod.DELETE)
     public void delete(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
     }
